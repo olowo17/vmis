@@ -45,11 +45,10 @@ const ReportIncident = () => {
     try {
       // Simulate backend validation logic for incident reporting
       if (
-        formData.description &&
-        formData.location &&
-        formData.reportReason
+        validateForm()
       ) {
         // Display success toast if the form data is valid
+        alert("success")
         toast.success("Incident reported successfully!");
   
         // Reset form fields
