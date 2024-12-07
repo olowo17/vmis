@@ -42,7 +42,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/distress" className="hover:text-green-400 flex items-center transition duration-300 ease-in-out">
+              <Link to="/incidentReport" className="hover:text-green-400 flex items-center transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faHeadset} className="mr-2" /> Distress Call
               </Link>
             </li>

@@ -31,6 +31,16 @@ const Sidebar = () => {
           </li>
           <li>
             <NavLink
+              to="/register"
+              className={({ isActive }) =>
+                `block p-2 rounded ${isActive ? "bg-blue-800" : "hover:bg-blue-700"}`
+              }
+            >
+              Register Officer
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/database"
               className={({ isActive }) =>
                 `block p-2 rounded ${isActive ? "bg-blue-800" : "hover:bg-blue-700"}`
@@ -47,6 +57,16 @@ const Sidebar = () => {
               }
             >
               Reports
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/registerCar"
+              className={({ isActive }) =>
+                `block p-2 rounded ${isActive ? "bg-blue-800" : "hover:bg-blue-700"}`
+              }
+            >
+              Register Car
             </NavLink>
           </li>
           <li>

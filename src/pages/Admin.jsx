@@ -57,45 +57,45 @@ const Admin = () => {
             <tbody className='text-xl'>
               <tr className="hover:bg-gray-600 hover:text-white">
                 <td className="p-2">AB123CD</td>
-                <td className="p-2">John Doe</td>
+                <td className="p-2">John Salami</td>
                 <td className="p-2 text-green-600">Cleared</td>
                 <td className="p-2">2024-11-11</td>
               </tr>
               <tr className="hover:bg-gray-600 hover:text-white">
                 <td className="p-2">EF456GH</td>
-                <td className="p-2">Jane Smith</td>
+                <td className="p-2">Chineye Molokwu</td>
                 <td className="p-2 text-rose-600">Flagged</td>
                 <td className="p-2">2024-11-10</td>
               </tr>
               <tr className="hover:bg-gray-600 hover:text-white">
                 <td className="p-2">EF456GH</td>
-                <td className="p-2">Jane Smith</td>
+                <td className="p-2">Victor Ifeanna</td>
                 <td className="p-2 text-yellow-600">Pending</td>
                 <td className="p-2">2024-11-10</td>
               </tr>
               <tr className="hover:bg-gray-600 hover:text-white">
                 <td className="p-2">EF456GH</td>
-                <td className="p-2">Jane Smith</td>
+                <td className="p-2">Jane Calistus</td>
                 <td className="p-2 text-rose-600">Flagged</td>
                 <td className="p-2">2024-11-10</td>
               </tr>
               <tr className="hover:bg-gray-600 hover:text-white">
                 <td className="p-2">EF456GH</td>
-                <td className="p-2">Jane Smith</td>
+                <td className="p-2">Edet Okon</td>
                 <td className="p-2 text-green-600">Cleared</td>
-                <td className="p-2">2024-11-10</td>
+                <td className="p-2">2024-09-10</td>
               </tr>
               <tr className="hover:bg-gray-600 hover:text-white">
                 <td className="p-2">EF456GH</td>
-                <td className="p-2">Jane Smith</td>
+                <td className="p-2">Yahaya Mohammed</td>
                 <td className="p-2 text-rose-600">Flagged</td>
-                <td className="p-2">2024-11-10</td>
+                <td className="p-2">2023-03-19</td>
               </tr>
               <tr className="hover:bg-gray-600 hover:text-white">
                 <td className="p-2">EF456GH</td>
-                <td className="p-2">Jane Smith</td>
+                <td className="p-2">Felix Azubike</td>
                 <td className="p-2 text-yellow-600">Pending</td>
-                <td className="p-2">2024-11-10</td>
+                <td className="p-2">2022-07-16</td>
               </tr>
               {/* Add more rows as needed */}
             </tbody>
