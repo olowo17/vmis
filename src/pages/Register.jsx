@@ -44,7 +44,7 @@ const Register = () => {
   
     try {
       // Mocking a backend check for registration success
-      if (formData.badgeNumber && formData.name) { // Example validation criteria
+      if (validateForm()) { // Example validation criteria
         toast.success("Registration successful! Badge Number:VMIS503" , { position: "top-right" , autoClose: 60000,});
       } else {
         toast.error("Registration failed. Please check your details.", {
