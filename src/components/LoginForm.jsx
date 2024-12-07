@@ -28,7 +28,7 @@ const LoginForm = () => {
   
     try {
       // Mocking a backend check for valid credentials
-      if (securityId === "validSecurityId" && password === "validPassword") {
+      if (securityId === "VMIS80860" && password === "123456") {
         toast.success("Login successful!");
         navigate("/userDashboard"); // Navigate to the user dashboard
       } else {

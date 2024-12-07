@@ -31,7 +31,7 @@ const AdminLogin = ({
   
     try {
       // Mocking a backend check for valid badge number
-      if (badgeNumber === "validBadgeNumber") {
+      if (badgeNumber === "VMIS50527") {
         toast.success("Admin login successful!");
         navigate("/admin"); // Redirect to admin dashboard (or another page)
       } else {
