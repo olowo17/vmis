@@ -20,27 +20,51 @@ const LoginForm = () => {
   // Handle login form submission
   const handleLogin = async (e) => {
     e.preventDefault();
-    
+  
     if (!securityId || !password) {
       setError("Please fill in all fields.");
       return;
     }
-
+  
     try {
-      // Assuming you are using an API service to call login API
-      const response = await apiService.officerLogin(securityId, password);
-
-      if (response.status === 200 || response.status === 201) {
+      // Mocking a backend check for valid credentials
+      if (securityId === "validSecurityId" && password === "validPassword") {
         toast.success("Login successful!");
         navigate("/userDashboard"); // Navigate to the user dashboard
       } else {
         toast.error("Invalid credentials. Please try again.");
+        throw new Error("Invalid credentials");
       }
     } catch (error) {
-      toast.error("Login failed. Please check your credentials.");
+      // Error handling remains the same
       console.error("Login error:", error);
+      toast.error("Login failed. Please check your credentials.");
     }
   };
+
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+    
+  //   if (!securityId || !password) {
+  //     setError("Please fill in all fields.");
+  //     return;
+  //   }
+
+  //   try {
+  //     // Assuming you are using an API service to call login API
+  //     const response = await apiService.officerLogin(securityId, password);
+
+  //     if (response.status === 200 || response.status === 201) {
+  //       toast.success("Login successful!");
+  //       navigate("/userDashboard"); // Navigate to the user dashboard
+  //     } else {
+  //       toast.error("Invalid credentials. Please try again.");
+  //     }
+  //   } catch (error) {
+  //     toast.error("Login failed. Please check your credentials.");
+  //     console.error("Login error:", error);
+  //   }
+  // };
 
   return (
     <section className="flex items-center justify-center text-center h-screen bg-gray-400 max-h-screen overflow-hidden">

@@ -39,13 +39,20 @@ const ReportIncident = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!validateForm()) return;
-
+  
     try {
-      const response = await apiService.reportIncident(formData);
-      if (response.status === 200 || response.status === 201) {
+      // Simulate backend validation logic for incident reporting
+      if (
+        formData.description &&
+        formData.location &&
+        formData.reportReason
+      ) {
+        // Display success toast if the form data is valid
         toast.success("Incident reported successfully!");
+  
+        // Reset form fields
         setFormData({
           description: "",
           location: "",
@@ -55,13 +62,43 @@ const ReportIncident = () => {
           reportReason: "",
         });
       } else {
-        toast.error("Failed to report the incident. Please try again.");
+        // Display error toast if data is invalid
+        toast.error("Failed to report the incident. Please check your input.");
+        throw new Error("Invalid incident report data");
       }
     } catch (error) {
+      // Log the error for debugging purposes
       toast.error("Error reporting incident. Please check your input.");
-      console.error("Report error:", error);
+      console.error("Report error:", error.message);
     }
   };
+  
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     if (!validateForm()) return;
+
+//     try {
+//       const response = await apiService.reportIncident(formData);
+//       if (response.status === 200 || response.status === 201) {
+//         toast.success("Incident reported successfully!");
+//         setFormData({
+//           description: "",
+//           location: "",
+//           plateNumber: "",
+//           witness: "",
+//           reporterPhoneNumber: "",
+//           reportReason: "",
+//         });
+//       } else {
+//         toast.error("Failed to report the incident. Please try again.");
+//       }
+//     } catch (error) {
+//       toast.error("Error reporting incident. Please check your input.");
+//       console.error("Report error:", error);
+//     }
+//   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

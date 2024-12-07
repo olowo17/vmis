@@ -23,25 +23,48 @@ const AdminLogin = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!badgeNumber) {
-      setError('Badge number is required');
+      setError("Badge number is required");
       return;
     }
-
+  
     try {
-      const response = await apiService.adminLogin(badgeNumber);
-      if (response.status === 200 || response.status === 201) {
-        toast.success('Admin login successful!');
-        navigate('/admin'); // Redirect to admin dashboard (or another page)
+      // Mocking a backend check for valid badge number
+      if (badgeNumber === "validBadgeNumber") {
+        toast.success("Admin login successful!");
+        navigate("/admin"); // Redirect to admin dashboard (or another page)
       } else {
-        toast.error('Invalid badge number, please try again.');
+        toast.error("Invalid badge number, please try again.");
+        throw new Error("Invalid badge number");
       }
     } catch (error) {
-      toast.error('Login failed. Please check your details.');
-      console.error('Login error:', error);
+      // Error handling remains the same
+      console.error("Login error:", error);
+      toast.error("Login failed. Please check your details.");
     }
   };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   if (!badgeNumber) {
+  //     setError('Badge number is required');
+  //     return;
+  //   }
+
+  //   try {
+  //     const response = await apiService.adminLogin(badgeNumber);
+  //     if (response.status === 200 || response.status === 201) {
+  //       toast.success('Admin login successful!');
+  //       navigate('/admin'); // Redirect to admin dashboard (or another page)
+  //     } else {
+  //       toast.error('Invalid badge number, please try again.');
+  //     }
+  //   } catch (error) {
+  //     toast.error('Login failed. Please check your details.');
+  //     console.error('Login error:', error);
+  //   }
+  // };
 
   return (
     <>

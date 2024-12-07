@@ -43,20 +43,41 @@ const Register = () => {
     if (!validateForm()) return;
   
     try {
-      // API call
-      await apiService.registerOfficer(formData);
-  
-      // If successful, show a success toast
-      toast.success("Registration successful!", { position: "top-right" });
+      // Mocking a backend check for registration success
+      if (formData.badgeNumber && formData.name) { // Example validation criteria
+        toast.success("Registration successful! Badge Number:VMIS503" , { position: "top-right" , autoClose: 60000,});
+      } else {
+        toast.error("Registration failed. Please check your details.", {
+          position: "top-right",
+        });
+        throw new Error("Invalid registration details");
+      }
     } catch (error) {
-      // Handle errors with a toast
-      toast.error(
-        error.response?.data?.message || "Registration failed. Please check your details.",
-        { position: "top-right" }
-      );
-      console.error(error.response?.data || error.message);
+      // Error handling remains the same
+      console.error("Registration error:", error.message);
     }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  
+  //   if (!validateForm()) return;
+  
+  //   try {
+  //     // API call
+  //     await apiService.registerOfficer(formData);
+  
+  //     // If successful, show a success toast
+  //     toast.success("Registration successful!", { position: "top-right" });
+  //   } catch (error) {
+  //     // Handle errors with a toast
+  //     toast.error(
+  //       error.response?.data?.message || "Registration failed. Please check your details.",
+  //       { position: "top-right" }
+  //     );
+  //     console.error(error.response?.data || error.message);
+  //   }
+  // };
   
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

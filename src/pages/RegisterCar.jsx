@@ -45,21 +45,42 @@ const RegisterCar = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!validateForm()) return;
-
+  
     try {
-      // Make API call to register the car
-      const response = await apiService.registerCar(formData);
-
-      // Display success toast if response is successful
-      toast.success("Car registered successfully!", { position: "top-right" });
+      // Simulate backend logic for car registration
+      if (formData.licensePlate && formData.ownerName) { // Example validation criteria
+        // Display success toast if the form data meets the criteria
+        toast.success("Car registered successfully!", { position: "top-right" });
+      } else {
+        // Simulate a failure and throw an error for invalid data
+        toast.error("Car registration failed. Please try again.", { position: "top-right" });
+        throw new Error("Invalid car registration details");
+      }
     } catch (error) {
-      // Display error toast if registration fails
-      toast.error("Car registration failed. Please try again.", { position: "top-right" });
-      console.error(error.response?.data || error.message);
+      // Log the error for debugging purposes
+      console.error("Registration error:", error.message);
     }
   };
+  
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   if (!validateForm()) return;
+
+  //   try {
+  //     // Make API call to register the car
+  //     const response = await apiService.registerCar(formData);
+
+  //     // Display success toast if response is successful
+  //     toast.success("Car registered successfully!", { position: "top-right" });
+  //   } catch (error) {
+  //     // Display error toast if registration fails
+  //     toast.error("Car registration failed. Please try again.", { position: "top-right" });
+  //     console.error(error.response?.data || error.message);
+  //   }
+  // };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
